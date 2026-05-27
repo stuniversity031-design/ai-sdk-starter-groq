@@ -6,15 +6,18 @@ import {
 } from "ai";
 
 const languageModels = {
+  "kimi-k2": groq("llama-3.1-70b-versatile"), // Maps to real Groq model
+  "meta-llama/llama-4-scout-17b-16e-instruct": groq(
+    "llama-3.1-8b-instant", // Maps to real Groq model
+  ),
   "llama-3.1-8b-instant": groq("llama-3.1-8b-instant"),
-  "llama-3.1-70b-versatile": groq("llama-3.1-70b-versatile"),
-  "mixtral-8x7b-32768": groq("mixtral-8x7b-32768"),
   "deepseek-r1-distill-llama-70b": wrapLanguageModel({
     middleware: extractReasoningMiddleware({
       tagName: "think",
     }),
     model: groq("deepseek-r1-distill-llama-70b"),
   }),
+  "llama-3.3-70b-versatile": groq("llama-3.3-70b-versatile"),
 };
 
 export const model = customProvider({
