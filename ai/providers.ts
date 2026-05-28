@@ -28,4 +28,5 @@ export type modelID = keyof typeof languageModels;
 
 export const MODELS = Object.keys(languageModels);
 
-export const defaultModel: modelID = "llama-3.1-70b-versatile";
+export const defaultModel: modelID = "kimi-k2";
+
